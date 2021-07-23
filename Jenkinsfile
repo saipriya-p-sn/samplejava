@@ -11,7 +11,8 @@
     def snapshotName=""
     def exporterName ='returnAllData' 
     // def namePath ="E2E/pipelineUpload/${currentBuild.number}"
-    def namePath ='component1'
+//     def namePath ='component1'
+def namePath ="PerfApps0_dep__coll__comp_0/${currentBuild.number}"
 pipeline {
     agent any
     stages {
