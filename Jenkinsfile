@@ -1,4 +1,4 @@
-    def appName='E2E_App'
+    def appName='AmitApp_1'
     def snapName=''
     def deployName = 'TEST'
     def exportFormat ='json'
