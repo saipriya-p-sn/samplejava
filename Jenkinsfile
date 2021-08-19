@@ -9,7 +9,7 @@
     def snapshotName=""
     def exporterName ='returnAllData' 
     // def namePath ="E2E/pipelineUpload/${currentBuild.number}"
-    def namePath ='component3/${currentBuild.number}'
+    def namePath ="component3/${currentBuild.number}"
     def uploadfile1 ='component3'
     def target ='component'
 pipeline {
