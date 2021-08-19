@@ -1,6 +1,6 @@
-    def appName='AmitApp_1'
+    def appName='Jenkins_Intgr_App'
     def snapName=''
-    def deployName = 'TEST'
+    def deployName = ''
     def exportFormat ='json'
     def configFilePath = "paymentService"
     def fileNamePrefix ='exported_file_'
@@ -9,7 +9,9 @@
     def snapshotName=""
     def exporterName ='returnAllData' 
     // def namePath ="E2E/pipelineUpload/${currentBuild.number}"
-    def namePath ='component1'
+    def namePath ='component3/${currentBuild.number}'
+    def uploadfile1 ='component3'
+    def target ='component'
 pipeline {
     agent any
     stages {
@@ -24,7 +26,7 @@ pipeline {
                 script{
                     sh "echo validating configuration file ${configFilePath}.${exportFormat}"
                     echo "name path ::::: ${namePath}"
-                    changeSetId = snDevOpsConfigUpload(applicationName:"${appName}",target:'component',namePath:"${namePath}", fileName:"component1", autoCommit:'true',autoValidate:'true',dataFormat:"${exportFormat}")
+                    changeSetId = snDevOpsConfigUpload(applicationName:"${appName}",target:"${target}",namePath:"${namePath}", fileName:"${uploadfile1}", autoCommit:'true',autoValidate:'true',dataFormat:"${exportFormat}")
                     // snDevOpsConfigUpload(applicationName:"${appName}",target:'deployable',namePath:"${namePath}", fileName:"deployable", autoCommit:'true',autoValidate:'true',dataFormat:"${exportFormat}",changesetNumber:"${changeSetId}", deployableName:"${deployName}")
                     echo "validation result $changeSetId"
                 }
