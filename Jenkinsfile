@@ -1,6 +1,6 @@
     def appName='Jenkins_Intgr_App'
     def snapName=''
-    def deployName = ''
+    def deployName = 'Test'
     def exportFormat ='json'
     def configFilePath = "paymentService"
     def fileNamePrefix ='exported_file_'
