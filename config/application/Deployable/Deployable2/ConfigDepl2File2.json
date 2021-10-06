@@ -1,0 +1,10 @@
+{
+    "Depl2": {
+        "filename": "ConfigDepl2File2",
+        "format": "json",
+        "path": "application/deployable/deployable2",
+        "field1": "value1",
+        "field2": "value2",
+        "field3":"value3"
+    }
+}

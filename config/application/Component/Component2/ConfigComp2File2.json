@@ -1,0 +1,10 @@
+{
+    "Comp2": {
+        "filename": "ConfigComp2File2",
+        "format": "json",
+        "path": "application/component/component2",
+        "field1": "value1",
+        "field2": "value2",
+        "field3":"value3"
+    }
+}
