@@ -1,0 +1,10 @@
+{
+    "components": {
+        "filename": "components",
+        "format": "json",
+        "path": "application/component",
+        "field1": "value1",
+        "field2": "value2",
+        "field3":"value3"
+    }
+}
