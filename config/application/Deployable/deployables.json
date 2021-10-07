@@ -1,11 +1,5 @@
 {
     "deployables": {
-        "filename": "deployables",
-        "format": "json",
-        "path": "application/deployable",
-        "field1": "value1",
-        "field2": "value2",
-        "field3":"value3",
-        "reupload":true
+        "override":true
     }
 }
