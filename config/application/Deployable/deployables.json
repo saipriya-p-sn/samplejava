@@ -1,5 +1,6 @@
 {
     "deployables": {
-        "override":true
+        "override":true,
+        "overridedDeleted":true
     }
 }
