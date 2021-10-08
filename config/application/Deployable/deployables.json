@@ -3,6 +3,7 @@
         "override":true,
         "overridedDeleted":{
         "over1":"1000",
-        "over2":"2000"}
+        "over2":"2000",
+        "over3":"3000"}
     }
 }
