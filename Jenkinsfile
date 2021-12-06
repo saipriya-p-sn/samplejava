@@ -37,7 +37,7 @@ pipeline {
                             configFile: "${configFile}",
                             target:"${target}",
                             namePath: "${namePath}",
-                            autoCommit:"false",
+                            autoCommit:"true",
                             autoValidate:"${validate}",
                             changesetNumber:"${changesetNumber}",
                             convertPath:"${convertPath}"
