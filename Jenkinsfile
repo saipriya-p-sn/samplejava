@@ -1,5 +1,5 @@
-   def appName='Jenkins_Test_App'
-   def deployName = 'Prod'
+   def appName='TestApplication'
+   def deployName = 'Test'
    def dataFormat ='json'
    def configFile ='config/**/Component/*.json'
    def target ='deployable'
@@ -44,32 +44,32 @@ pipeline {
                             )
                             
                     //upload to test
-                     snDevOpsConfigUpload(
-                            applicationName: "${appName}",
-                            deployableName: "test",
-                            dataFormat: "${dataFormat}",
-                            configFile: "${configFile}",
-                            target:"${target}",
-                            namePath: "${namePath}",
-                            autoCommit:"false",
-                            autoValidate:"${validate}",
-                            changesetNumber:"${changesetNumber}",
-                            convertPath:"${convertPath}"
-                    )
+//                      snDevOpsConfigUpload(
+//                             applicationName: "${appName}",
+//                             deployableName: "test",
+//                             dataFormat: "${dataFormat}",
+//                             configFile: "${configFile}",
+//                             target:"${target}",
+//                             namePath: "${namePath}",
+//                             autoCommit:"false",
+//                             autoValidate:"${validate}",
+//                             changesetNumber:"${changesetNumber}",
+//                             convertPath:"${convertPath}"
+//                     )
                     
                      //upload to PreProd
-                            snDevOpsConfigUpload(
-                            applicationName: "${appName}",
-                            deployableName: "preprod",
-                            dataFormat: "${dataFormat}",
-                            configFile: "${configFile}",
-                            target:"${target}",
-                            namePath: "${namePath}",
-                            autoCommit:"${commit}",
-                            autoValidate:"${validate}",
-                            changesetNumber:"${changesetNumber}",
-                            convertPath:"${convertPath}"
-                    )
+//                             snDevOpsConfigUpload(
+//                             applicationName: "${appName}",
+//                             deployableName: "preprod",
+//                             dataFormat: "${dataFormat}",
+//                             configFile: "${configFile}",
+//                             target:"${target}",
+//                             namePath: "${namePath}",
+//                             autoCommit:"${commit}",
+//                             autoValidate:"${validate}",
+//                             changesetNumber:"${changesetNumber}",
+//                             convertPath:"${convertPath}"
+//                     )
                    echo "Upload result $changesetNumber"
                }
            }
