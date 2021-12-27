@@ -6,6 +6,10 @@
         "field1": "value1",
         "field2": "value2",
         "field3":"value3",
-        "field3":"value3"
+        "field3":"value3_duplicate",
+        "field4":1234,
+        "field5":true,
+        "field6":[100,200,300],
+        "field7":["ab","bc","cd"]
     }
 }
