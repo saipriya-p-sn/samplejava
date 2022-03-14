@@ -1,5 +1,6 @@
 ---
 Avengers:
+  fileformat: yaml
   CaptainAmerica: enabled
   Hulk: enabled
   IronMan: disabled
