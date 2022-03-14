@@ -1,2 +1,10 @@
 {
-"naming":"0-9A-Za-z_-.whitespace |:[]()%$#"}
+    "JusticeLeague": {
+        "Superman1": "enabled",
+        "Batman1": "enabled",
+        "Wonderwoman1": "disabled",
+        "flash1": "disabled",
+        "Cybertron1": "enabled",
+        "Aquaman1":"enabled"
+    }
+}
