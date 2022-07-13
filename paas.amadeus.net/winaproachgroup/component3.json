@@ -5,6 +5,8 @@
         "IronMan": "disabled",
         "BlackWidow": "disabled",
         "SpiderMan": "enabled",
-        "greenLantern":"REenabled"
+        "greenLantern":"REenabled",
+        "paas.amadeus.net/winaproachgroup":"value",
+        "issueKey":"paas.amadeus.net/winaproachgroup"
     }
 }
