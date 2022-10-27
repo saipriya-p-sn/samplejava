@@ -5,9 +5,10 @@
         "myPreferredPaymentMethods": "enabled",
         "invoicePrinting": "disabled",
         "payOnDelivery": "disabled",
-        "payByVoucher": "enabled"
+        "payByVoucher": "enabled",
         "masterBranch":"enabled",
-        "masterBranchCheck":"true"
+        "masterBranchCheck":"true",
+        "mastercommit":"1"
         "branch":"scratch/feature"
     },
     "settings": {
