@@ -8,6 +8,7 @@
         "payByVoucher": "enabled"
         "masterBranch":"enabled",
         "masterBranchCheck":"true"
+        "branch":"scratch/feature"
     },
     "settings": {
         "paypal": "disabled",
