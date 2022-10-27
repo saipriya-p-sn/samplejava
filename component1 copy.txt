@@ -8,7 +8,7 @@
         "payByVoucher": "enabled",
         "masterBranch":"enabled",
         "masterBranchCheck":"true",
-        "mastercommit":"1"
+        "mastercommit":"2"
         "branch":"scratch/feature"
     },
     "settings": {
