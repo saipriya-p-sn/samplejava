@@ -6,6 +6,7 @@
         "invoicePrinting": "disabled",
         "payOnDelivery": "disabled",
         "payByVoucher": "enabled"
+        "masterBranch":"enabled"
     },
     "settings": {
         "paypal": "disabled",
