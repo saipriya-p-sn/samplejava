@@ -1,2 +1,3 @@
 {
-"naming":"0-9A-Za-z_-.whitespace |:[]()%$#"}
+"naming":"0-9A-Za-z_-.whitespace |:[]()%$#",
+"0-9A-Za-z_-.whitespace |:[]()%$#":"allowed chars"}
