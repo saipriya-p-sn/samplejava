@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceId>pay55555</serviceId>
+<featureToggles>
+	<paymentRefund>enabled</paymentRefund>
+	<myPreferredPaymentMethods>enabled</myPreferredPaymentMethods>
+	<invoicePrinting>disabled</invoicePrinting>
+	<payOnDelivery>disabled</payOnDelivery>
+	<payByVoucher>enabled</payByVoucher>
+</featureToggles>
+<settings>
+	<paypal>disabled</paypal>
+	<applePay>disabled</applePay>
+	<ogone>enabled</ogone>
+	<merchantId>replaceThis</merchantId>
+	<paymentMethods>1,3,5,6</paymentMethods>
+	<allowed.billing.countries>74,76,88,136,139,176,197</allowed.billing.countries>
+	<creditcards.cacf.type.ids>43,44,45,46</creditcards.cacf.type.ids>
+	<creditcards.oney.type.ids>33,34,35,36</creditcards.oney.type.ids>
+	<included.availabilityids>99,199</included.availabilityids>
+	<included.availabilityids.cacf>1,20,99,120,199</included.availabilityids.cacf>
+	<included.warrantiestypeids.cacf>19002,19005,19006,19009,19010,19011,19014,19016</included.warrantiestypeids.cacf>
+	<dbPort>@@paymentService/database/dbPort@@</dbPort>
+	<dbConnectionString>@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/dbServer@@ @@paymentService/database/dbName@@</dbConnectionString>
+	<dbConnectionStringBackup>@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/backup/dbServer@@ @@paymentService/database/dbName@@</dbConnectionStringBackup>
+	<encryptionTypes>AES</encryptionTypes>
+	<encryptionTypes>3DES</encryptionTypes>
+	<encryptionTypes>RSA</encryptionTypes>
+	<encryptionProtocols>
+		<type>https</type>
+		<settings>
+			<enabled>true</enabled>
+			<supported>true</supported>
+		</settings>
+	</encryptionProtocols>
+	<encryptionProtocols>
+		<type>http</type>
+		<settings>
+			<enabled>false</enabled>
+			<supported>false</supported>
+		</settings>
+	</encryptionProtocols>
+	<TLS>
+		<version>1.0</version>
+		<enabled>false</enabled>
+		<allowedCipherSuites>
+			<array></array>
+		</allowedCipherSuites>
+	</TLS>
+	<TLS>
+		<version>1.1</version>
+		<enabled>false</enabled>
+		<allowedCipherSuites>
+			<array></array>
+		</allowedCipherSuites>
+	</TLS>
+	<TLS>
+		<version>1.2</version>
+		<enabled>true</enabled>
+		<allowedCipherSuites>TLS_DHE_RSA_WITH_AES_256_CBC_SHA256</allowedCipherSuites>
+		<allowedCipherSuites>TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</allowedCipherSuites>
+		<allowedCipherSuites>TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305</allowedCipherSuites>
+		<allowedCipherSuites>TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</allowedCipherSuites>
+	</TLS>
+	<TLS>
+		<version>1.3</version>
+		<enabled>true</enabled>
+		<allowedCipherSuites>TLS_AES_256_GCM_SHA384</allowedCipherSuites>
+		<allowedCipherSuites>TLS_CHACHA20_POLY1305_SHA256</allowedCipherSuites>
+		<allowedCipherSuites>TLS_AES_128_GCM_SHA256</allowedCipherSuites>
+		<allowedCipherSuites>TLS_AES_128_CCM_8_SHA256</allowedCipherSuites>
+	</TLS>
+</settings>
+<dataTypes>
+	<booleanKey>true</booleanKey>
+	<arrayKey>1</arrayKey>
+	<arrayKey>2</arrayKey>
+	<arrayKey>3</arrayKey>
+	<arrayKey>4</arrayKey>
+	<arrayKey>5</arrayKey>
+	<keyArrOfObj>
+		<object1>
+			<key1>value2</key1>
+		</object1>
+	</keyArrOfObj>
+	<keyArrOfObj>
+		<object2>value</object2>
+	</keyArrOfObj>
+	<keyArrOfObj>
+		<object3>1</object3>
+		<object3>2</object3>
+		<object3>34</object3>
+	</keyArrOfObj>
+	<keyJsonObj>
+		<key>value</key>
+	</keyJsonObj>
+	<keyInt>12</keyInt>
+	<keyDouble>89.78</keyDouble>
+	<keyNullVal>null</keyNullVal>
+	<keyEcapeChars>value/
+ this is newline, backspace &#x8;, tab &#x9;</keyEcapeChars>
+</dataTypes>
