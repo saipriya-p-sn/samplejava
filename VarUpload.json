@@ -21,7 +21,7 @@
         "included.warrantiestypeids.cacf": "19002,19005,19006,19009,19010,19011,19014,19016",
         "dbPort": "@@paymentService/database/dbPort@@",
         "dbConnectionString": "@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/dbServer@@ @@paymentService/database/dbName@@",
-        "dbConnectionStringBackup": "@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/backup/dbServer@@ @@paymentService/database/dbName@@",
+        "dbConnectionStringBackup": "@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/backup/dbServer@@ @@paymentService/database/dbName@@"
     },
     "dataTypes":{
       "booleanKey":true,
