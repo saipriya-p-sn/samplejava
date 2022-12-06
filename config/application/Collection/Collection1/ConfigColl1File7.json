@@ -1,0 +1,10 @@
+{
+    "Coll1": {
+        "filename": "ConfigColl1File7",
+        "format": "json",
+        "path": "application/collection/collection1",
+        "field1": "value1",
+        "field2": "value2",
+        "field3":"value3"
+    }
+}
