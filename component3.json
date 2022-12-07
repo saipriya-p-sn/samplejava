@@ -7,6 +7,6 @@
         "SpiderMan": "enabled",
         "greenLantern":"REenabled",
         "naming":"0-9A-Za-z_-.whitespace |:[]()%$#",
-"0-9A-Za-z_-.whitespace |:[]()%$#":"allowed chars"
+"0-9A-Za-z_-.whitespace":"allowed chars"
     }
 }
