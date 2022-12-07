@@ -138,47 +138,6 @@ stages {
             }
         }
     }
-    stage("Get snapshots created"){
-        steps{
-            echo "amit-Triggering Get snapshots scenarios for applicationName:${appName},changesetNumber:${chgsetUpld2Dplybl} & deployableName:${getDeployName}"
-            script{
-                echo "@@@@@@@@@@@@@@@Inputs:${appName} , ${chgsetUpld2Dplybl} & ${getDeployName} & isValidated: ${isValidated} & ${outputForm}@@@@@@@@@@@@@@@"
-                changeSetResults = snDevOpsConfigGetSnapshots(
-                        applicationName: "${appName}",
-                        changesetNumber: "${chgsetUpld2Dplybl}",
-                        deployableName: "",
-                        outputFormat:"xml",
-                        isValidated:false,
-                        showResults:true,
-                        markFailed:false
-                      )
-                echo "######END3########## Application + Changeset + Deployable Result : ${changeSetResults}"
-                if(changeSetResults !=null){
-                    def changeSetResultsObject = readJSON text: changeSetResults
-                    changeSetResultsObject.each {
-                        if(it.validation == "passed"){
-                            echo "validation passed for snapshot : ${it.name}"
-                            snapshotName = it.name
-                        }else{
-                            echo "Snapshot failed to get validated : ${it.name}" ;
-                            // assert it.validation == "passed"
-                            def deployable = it.name.split('-')[0]
-                            echo "################ : ${deployable}"
-                            validateRespnonse = snDevOpsConfigValidate(
-                                              applicationName: "${appName}", 
-                                              deployableName: "${deployable}", 
-                                              snapshotName: "${it.name}", 
-                                              markFailed:false
-                                              ,showResults:true
-                                              )
-                        }
-                    }
-              echo "Snapshot Name : ${snapshotName}"
-                }
-                    
-                }
-            }
-        }
     stage('Initiate ChangeRequest'){
         steps{
             echo "Devops Change trigger change request"
@@ -187,21 +146,6 @@ stages {
 
     }
     
-    stage('Publish the snapshot'){
-        steps{
-            script{
-                echo "Step to publish snapshot applicationName:${appName},deployableName:${deployName} snapshotName:${snapshotName}"
-                    publishSnapshotResults = snDevOpsConfigPublish(
-                    applicationName:"${appName}",
-                    deployableName:"${deployName}",
-                    snapshotName: "${snapshotName}",
-                    showResults:true,
-                    markFailed:false
-                )
-                 // echo " Publish result for applicationName:${appName},deployableName:${deployName} snapshotName:${snapshotName} is ${publishSnapshotResults}"
-            }
-        }
-    }
     stage('Export Snapshots from Service Now') {
         steps{
             script{
@@ -236,7 +180,7 @@ stages {
             script{
                     snDevOpsChange(
                       applicationName:"${appName}",
-                      snapshotName:"${snapshotName}"
+                     snapshotName:"Prod-v10.dpl"
                       )
 
             }
