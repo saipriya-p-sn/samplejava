@@ -29,7 +29,8 @@
       "keyInt":12,
       "keyDouble":89.78,
       "keyNullVal":null,
-      "keyEcapeChars":"value/\n this is newline, backspace \b, tab \t"
+      "keyEcapeChars":"value/\n this is newline, backspace \b, tab \t",
+      "-9A-Za-z_-.whitespace :%$#": "allowed chars for cdi"
     }
 
 }
