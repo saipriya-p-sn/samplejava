@@ -24,7 +24,7 @@
         "dbConnectionStringBackup": "@@paymentService/database/dbUserName@@:@@paymentService/database/dbPassword@@-@@paymentService/database/backup/dbServer@@ @@paymentService/database/dbName@@"
     },
     "dataTypes":{
-      "booleanKey":true,
+      "booleanKey":false,
       "keyJsonObj":{"key":"value"},
       "keyInt":12,
       "keyDouble":89.78,
