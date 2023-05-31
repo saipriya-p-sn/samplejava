@@ -1,10 +1,10 @@
 {"paymentService": {
-    "database": {
-      "dbName": "paymentX_dev22",
-      "dbUserName": "root2",
-      "dbPassword": "admin1",
-      "dbServer": "db22.paymentx.be",
-      "dbPort": "3306",
+    "Comp_database": {
+      "dbName": "paymentX_dev77_comp",
+      "dbUserName": "component",
+      "dbPassword": "component",
+      "dbServer": "db77.paymentx.be",
+      "dbPort": "7001",
       "backup": {
         "dbServer": "db23.paymentx.be"
       }

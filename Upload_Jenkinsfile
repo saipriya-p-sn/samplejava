@@ -1,0 +1,122 @@
+   def appName='TestApplication'
+   def deployName = 'Test'
+   def dataFormat ='json'
+   def configFile ='config/**/Component/*.json'
+   def target ='deployable'
+   def namePath ="jenkinsTest/${currentBuild.number}"
+   def commit =false
+   def validate =true
+   def convertPath =true
+   def changesetNumber=""
+   def snapshotName=''
+
+   def fullFileName="${appName}-${deployName}-${currentBuild.number}.${dataFormat}"
+   def exporterName ='testExporter' 
+   
+   
+   
+   
+pipeline {
+   agent any
+   stages {
+       stage('Clone repository') {               
+          steps{
+               // checkout scm
+               git branch: 'master', url: 'https://github.com/iamkumaramit/samplejava.git'
+          }
+       }     
+       stage('Upload Configuration file'){
+           steps{
+               script{
+                   sh "echo uploading configuration file ${configFile}"
+                   echo "Test Upload to Component"
+                   changesetNumber = snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            deployableName: "${deployName}",
+                            dataFormat: "${dataFormat}",
+                            configFile: "${configFile}",
+                            target:"component",
+                            namePath: "${namePath}",
+                            autoCommit:"true",
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                            )
+                            
+                    echo "Test Upload to Deployable"
+                     snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            deployableName: "test",
+                            dataFormat: "${dataFormat}",
+                            configFile: "${configFile}",
+                            target:"Deployable",
+                            namePath: "${namePath}",
+                            autoCommit:"false",
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                    )
+                    
+                    echo "Test Upload to Collection"
+                    snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            deployableName: "preprod",
+                            dataFormat: "${dataFormat}",
+                            configFile: "${configFile}",
+                            target:"collection",
+                            collectionName="testCollection1",
+                            namePath: "${namePath}",
+                            autoCommit:"${commit}",
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                    )
+
+                    echo "Test Upload to Collection vars"
+                      snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            deployableName: "preprod",
+                            dataFormat: "${dataFormat}",
+                            configFile: "collectionsVar.json",
+                            target:"collection",
+                            collectionName="testCollection1",
+                            namePath: "vars/${currentBuild.number}",
+                            autoCommit:"${commit}",
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                    )
+                    echo "Test Upload to Component vars"
+                      snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            dataFormat: "${dataFormat}",
+                            configFile: "componentsVar.json",
+                            target:"component",
+                            namePath: "vars/${currentBuild.number}",
+                            autoCommit:"${commit}",
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                    )
+
+                    echo "Test Upload to deployable vars"
+                      snDevOpsConfigUpload(
+                            applicationName: "${appName}",
+                            deployableName: "preprod",
+                            dataFormat: "${dataFormat}",
+                            configFile: "deployablesVar.json",
+                            target:"deployable",
+                            namePath: "vars/${currentBuild.number}",
+                            autoCommit:true,
+                            autoValidate:"${validate}",
+                            changesetNumber:"${changesetNumber}",
+                            convertPath:"${convertPath}"
+                    )
+
+                   echo "Upload result $changesetNumber"
+               }
+           }
+       }
+   }
+
+}

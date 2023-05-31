@@ -1,0 +1,13 @@
+{"paymentService": {
+    "Coll_database": {
+      "dbName": "paymentX_prd88",
+      "dbUserName": "collection",
+      "dbPassword": "collection",
+      "dbServer": "db88.paymentx.be",
+      "dbPort": "8001",
+      "backup": {
+        "dbServer": "db23.paymentx.be"
+      }
+    }
+  }
+}

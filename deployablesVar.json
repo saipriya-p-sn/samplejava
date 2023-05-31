@@ -1,10 +1,10 @@
 {"paymentService": {
-    "database": {
-      "dbName": "paymentX_prd9",
-      "dbUserName": "root2",
-      "dbPassword": "admin12345678",
-      "dbServer": "db22.paymentx.be",
-      "dbPort": "3399",
+    "deploy_database": {
+      "dbName": "paymentX_prd99",
+      "dbUserName": "deployable",
+      "dbPassword": "deployable",
+      "dbServer": "db99.paymentx.be",
+      "dbPort": "9001",
       "backup": {
         "dbServer": "db23.paymentx.be"
       }
