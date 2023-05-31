@@ -1,5 +1,5 @@
 {
-    "components": {
+    "Comp1": {
         "filename": "components",
         "format": "json",
         "path": "application/component",
