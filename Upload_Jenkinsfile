@@ -1,4 +1,4 @@
-   def appName='TestApplication'
+   def appName='Jenkins_test_app'
    def deployName = 'Test'
    def dataFormat ='json'
    def configFile ='config/**/Component/*.json'
