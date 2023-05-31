@@ -62,7 +62,7 @@ pipeline {
                             applicationName: "${appName}",
                             dataFormat: "${dataFormat}",
                             configFile: "${configFile}",
-                            target: "collections",
+                            target: "collection",
                             collectionName: "testCollection1",
                             namePath: "${namePath}",
                             autoCommit:"${commit}",
