@@ -60,11 +60,10 @@ pipeline {
                     echo "Test Upload to Collection"
                     snDevOpsConfigUpload(
                             applicationName: "${appName}",
-                            deployableName: "preprod",
                             dataFormat: "${dataFormat}",
                             configFile: "${configFile}",
-                            target:"collection",
-                            collectionName="testCollection1",
+                            target: "collection",
+                            collectionName: "testCollection1",
                             namePath: "${namePath}",
                             autoCommit:"${commit}",
                             autoValidate:"${validate}",
