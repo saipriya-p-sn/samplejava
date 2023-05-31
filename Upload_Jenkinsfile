@@ -37,7 +37,7 @@ pipeline {
                             configFile: "${configFile}",
                             target:"component",
                             namePath: "${namePath}",
-                            autoCommit:"true",
+                            autoCommit:"${commit}",
                             autoValidate:"${validate}",
                             changesetNumber:"${changesetNumber}",
                             convertPath:"${convertPath}"
@@ -51,7 +51,7 @@ pipeline {
                             configFile: "${configFile}",
                             target:"Deployable",
                             namePath: "${namePath}",
-                            autoCommit:"false",
+                            autoCommit:"${commit}",
                             autoValidate:"${validate}",
                             changesetNumber:"${changesetNumber}",
                             convertPath:"${convertPath}"
