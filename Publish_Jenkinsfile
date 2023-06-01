@@ -1,0 +1,141 @@
+def appName = 'jenkins_test_app'
+def deployName = 'prod'
+def dataFormat = 'json'
+def configFile = 'component3.json'
+def target = 'COMPONENT'
+def namePath = "/jenkinsTest/${currentBuild.number}"
+def initCommit = false
+def fnlCommit = true
+def validate = true
+def convertPath = false
+def changesetNumber = ''
+def chgsetUpld2Dplybl = ''
+def snapshotName = ''
+def inputFrRegistr = null
+def secondInitRes = ''
+def getDeployName = ''
+def isValidated = false
+def outputForm = 'xml'
+def validateRespnonse = ''
+def fullFileName = "${appName}-${deployName}-${currentBuild.number}.${dataFormat}"
+def exporterName = 'returnAllData-now'
+def exporterArgs = "{\"nodepath\": \"Preprod\",\"pathSeparator\": \",\"}"
+
+pipeline {
+    agent any
+    stages {
+        stage('Clone repository') {
+            steps {
+                // checkout scm
+                git branch: 'master', url: 'https://github.com/iamkumaramit/samplejava.git'
+            }
+        }
+        stage('Upload Configuration file') {
+            steps {
+                script {
+                    sh "echo uploading configuration file ${configFile}"
+                    echo "name path ::::: ${namePath}"
+                    echo '!!!!!!!!!!!Now uploading to Deployable!!!!!!!!!!!'
+                    changesetNumber = snDevOpsConfigUpload(
+                         applicationName: "${appName}",
+                         deployableName: "${deployName}",
+                         changesetNumber:"${changesetNumber}",
+                         dataFormat: "${dataFormat}",
+                         configFile: "${configFile}",
+                         target:'deployable',
+                         namePath: "${namePath}",
+                         autoCommit:"${initCommit}",
+                         autoValidate:"${validate}",
+                         convertPath:"${convertPath}",
+                         showResults:true,
+                         markFailed:false
+                         )
+
+                    //upload to test
+                    snDevOpsConfigUpload(
+                         applicationName: "${appName}",
+                         deployableName: 'test',
+                         changesetNumber:"${changesetNumber}",
+                         dataFormat: "${dataFormat}",
+                         configFile: "${configFile}",
+                         target:"${target}",
+                         namePath: "${namePath}",
+                         autoCommit:"${fnlCommit}",
+                         autoValidate:"${validate}",
+                         convertPath:"${convertPath}",
+                         showResults:true,
+                         markFailed:false
+                 )
+                    echo "!!!!!!!!!!! Uploaded to Changeset:${changesetNumber}"
+                }
+            }
+        }
+        stage('Test Publish for not published passed snapshot') {
+            steps {
+                script {
+                    changeSetResults = snDevOpsConfigGetSnapshots(
+                        applicationName: "${appName}",
+                        changesetNumber: "${changesetNumber}",
+                        deployableName: 'preprod',
+                        isValidated:false,
+                        showResults:true,
+                        markFailed:false
+                      )
+
+                    if (changeSetResults != null) {
+                        def changeSetResultsObject = readJSON text: changeSetResults
+                        changeSetResultsObject.each {
+                            echo "validation passed for snapshot : ${it.name}"
+                            snapshotName = it.name
+                        }
+                    }
+                    echo "Snapshot Name : ${snapshotName}"
+                    echo "Publishing the snapshot ${snapshotName}"
+
+                    publishSnapshotResults = snDevOpsConfigPublish(
+                    applicationName:"${appName}",
+                    deployableName:'preprod',
+                    snapshotName: "${snapshotName}",
+                    showResults:true,
+                    markFailed:false
+                )
+                    echo "Publish step result: ${publishSnapshotResults}"
+                }
+            }
+        }
+        stage('Test Publish for not published failed snapshot') {
+            steps {
+                script {
+                    changeSetResults = snDevOpsConfigGetSnapshots(
+                        applicationName: "${appName}",
+                        changesetNumber: "${changesetNumber}",
+                        deployableName: 'test',
+                        isValidated:false,
+                        showResults:true,
+                        markFailed:false
+                      )
+
+                    if (changeSetResults != null) {
+                        def changeSetResultsObject = readJSON text: changeSetResults
+                        changeSetResultsObject.each {
+                            echo "validation passed for snapshot : ${it.name}"
+                            snapshotName = it.name
+                        }
+                    }
+                    echo "Snapshot Name : ${snapshotName}"
+                    echo "Publishing the snapshot ${snapshotName}"
+
+                    publishSnapshotResults = snDevOpsConfigPublish(
+                    applicationName:"${appName}",
+                    deployableName:'preprod',
+                    snapshotName: "${snapshotName}",
+                    showResults:true,
+                    markFailed:false
+                )
+                    echo "Publish step result: ${publishSnapshotResults}"
+                }
+            }
+        }
+    }
+}
+
