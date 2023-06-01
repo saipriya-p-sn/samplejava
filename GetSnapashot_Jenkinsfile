@@ -110,7 +110,7 @@ pipeline {
                       )
                     echo "Result App+Deployable+Changeset: ${changeSetResults}"
 
-                    cho 'GetSnapshot Scenario: isValidated'
+                    echo 'GetSnapshot Scenario: isValidated'
                     changeSetResults = snDevOpsConfigGetSnapshots(
                         applicationName: "${appName}",
                         changesetNumber: "${chgsetUpld2Dplybl}",
