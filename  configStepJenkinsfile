@@ -1,0 +1,45 @@
+def appName = 'jenkins_test_app'
+def dataFormat = 'json'
+def configFile = 'component3.json'
+def namePath = "/jenkinsTest/${currentBuild.number}"
+// def convertPath = false
+def snapshotObj = ''
+// target types: component,Deployable or collection
+def target = 'component'
+
+pipeline {
+    agent any
+    stages {
+        stage('Clone repository') {
+            steps {
+                // checkout scm
+                git branch: 'master', url: 'https://github.com/iamkumaramit/samplejava.git'
+            }
+        }
+        stage('config step') {
+            steps {
+                script {
+                    snapshotObj = snDevOpsConfig(
+                        applicationName:"${appName}",
+                        configFile:"${configFile}",
+                        namePath:"${namePath}",
+                        target:"${target}",
+                        dataFormat:"${dataFormat}",
+                        markFailed:true,
+                        autoPublish:true,
+                        autoValidate:true,
+                        autoCommit:true
+                    )
+
+                    echo"*************************\n ${snapshotObj}"
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo '>>>>>Displaying Test results'
+            junit '**/*.xml'
+        }
+    }
+}
