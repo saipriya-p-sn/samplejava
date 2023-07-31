@@ -3,9 +3,9 @@
         "CDI_2":"CDI1_Value",
         "CDI_3":"CDI1_Value",
         "CDI_4":"CDI1_Value",
-        "Object_1":{
-            "obj1_cdi1":"1",
-            "obj2_arr1":["1","2"]
+        "Object_2":{
+            "obj2_cdi1":"dil bhaar",
+            "obj2_arr1":["balle","haddipa"]
         },
         "Bool_1":true,
         "Bool_2":false,
