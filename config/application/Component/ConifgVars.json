@@ -8,8 +8,6 @@
         },
         "Bool_1":true,
         "Bool_2":false,
-        "Arr_1":["cd"],
-        "Arr_3":["Monday","Tuesday","Wednesday"],
         "Var_1":"@@field1@@",
         "Var_2":"@@field2@@",
         "filename": "components",
@@ -19,9 +17,6 @@
         "field2": "value2",
         "field3":"value3",
         "field4":1234,
-        
-        "field6":[100,200,300],
-        "field7":["ab","bc","cd"]
     },
     "Node_1":{
         "Cdi_Node_1":"cdi_node_1",
