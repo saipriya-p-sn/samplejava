@@ -22,9 +22,5 @@
         
         "field6":[100,200,300],
         "field7":["ab","bc","cd"]
-    },
-    "Node_1":{
-        "Cdi_Node_1":"cdi_node_1",
-        "Cdi_Node_2":"cdi_node_2"
     }
 }
