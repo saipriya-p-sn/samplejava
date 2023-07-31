@@ -9,7 +9,7 @@
         },
         "Bool_1":true,
         "Bool_2":false,
-        "Arr_1":["ab","bc","cd"],
+        "Arr_1":["cd"],
         "Arr_2":["1","2","3"],
         "Var_1":"@@field1@@",
         "Var_2":"@@field2@@",
