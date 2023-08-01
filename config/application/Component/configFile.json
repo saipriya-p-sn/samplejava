@@ -7,7 +7,7 @@
         "Object_1":{
             "obj1_cdi1":"1",
             "obj2_arr1":["1","2"]
-        }
+        },
         "Bool_1":true,
         "Bool_2":false,
         "Arr_1":["ab","bc","cd"],
