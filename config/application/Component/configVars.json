@@ -1,16 +1,5 @@
 {
-    "Comp1": {
-        "CDI_2":"CDI1_Value",
-        "Bool_1":true,
-        "Var_1":"@@field1@@",
-        "filename": "components",
-        "format": "json",
-        "path": "application/component",
-        "field1": "value1",
-        "field2": "value2",
-        "field3":"value3",
-        "field4":1234
-    },
+    
     "Node_1":{
         "Cdi_Node_1":"cdi_node_1"
     }
