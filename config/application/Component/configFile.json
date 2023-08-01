@@ -1,20 +1,11 @@
 {
     "Comp1": {
-        "CDI_1":"CDI1_Value",
-        "CDI_2":"CDI1_Value",
-        "CDI_3":"CDI1_Value",
         "CDI_4":"CDI1_Value",
-        "Object_1":{
-            "obj1_cdi1":"1",
-            "obj1_arr1":["1","2"]
-        },
         "Object_2":{
             "obj2_cdi1":"dill",
-            "obj2_arr1":["naa karo","briyani"],
             "boozo":true
         },
         "Bool_1":true,
-        "Bool_2":false,
         "Arr_1":["ab","bc","cd"],
         "Arr_2":["1","2","3"],
         "Var_1":"@@field1@@",
@@ -27,13 +18,9 @@
         "field3":"value3",
         "field4":1234,
         
-        "field6":[100,200,300],
         "field7":["ab","bc","cd"]
     },
-    "Node_2":{
-            "node2_cdi1":"1",
-            "node2_cdi2":["1","2"]
-        },
+
     "Node_1":{
         "Cdi_Node_1":"cdi_node_1",
         "Cdi_Node_2":"cdi_node_2"
