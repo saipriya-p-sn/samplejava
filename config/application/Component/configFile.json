@@ -1,29 +1,3 @@
 {
-    "Comp1": {
-
-        "CDI_3":"CDI1_Value",
-        "CDI_4":"CDI1_Value",
-         "Object_2":{
-            "obj2_cdi1":"soniye",
-            "obj2_arr1":["heerye","pagla"]
-        },
-        "Bool_1":true,
-        "Arr_1":["dil","to","pagal"],
-        "Var_1":"@@field1@@",
-        "Var_2":"@@field2@@",
-        "filename": "components",
-        "format": "json",
-        "path": "application/component",
-        "field1": "value1",
-        "field2": "value2",
-        "field3":"value3",
-        "field4":1234,
-        
-        "field6":[100,200,300],
-        "field7":["ab","bc","cd"]
-    },
-    "Node_1":{
-        "Cdi_Node_1":"cdi_node_1",
-        "Cdi_Node_2":"cdi_node_2"
-    }
+    
 }
