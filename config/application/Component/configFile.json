@@ -1,15 +1,17 @@
 {
     "Comp1": {
+        "CDI_1":"CDI1_Value",
         "CDI_2":"CDI1_Value",
         "CDI_3":"CDI1_Value",
         "CDI_4":"CDI1_Value",
-        "Object_2":{
-            "obj2_cdi1":"dil bhaar",
-            "obj2_arr1":["balle","haddipa"]
-        },
+        "Object_1":{
+            "obj1_cdi1":"1",
+            "obj2_arr1":["1","2"]
+        }
         "Bool_1":true,
-        "Arr_1":["cd"],
-        "Arr_3":["Monday","Tuesday","Wednesday"],
+        "Bool_2":false,
+        "Arr_1":["ab","bc","cd"],
+        "Arr_2":["1","2","3"],
         "Var_1":"@@field1@@",
         "Var_2":"@@field2@@",
         "filename": "components",
@@ -22,5 +24,9 @@
         
         "field6":[100,200,300],
         "field7":["ab","bc","cd"]
+    },
+    "Node_1":{
+        "Cdi_Node_1":"cdi_node_1",
+        "Cdi_Node_2":"cdi_node_2"
     }
 }
