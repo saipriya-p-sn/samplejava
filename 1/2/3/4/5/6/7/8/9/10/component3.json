@@ -1,0 +1,12 @@
+{
+    "Avengers": {
+        "CaptainAmerica": "REenabled",
+        "Hulk": "REenabled",
+        "IronMan": "disabled",
+        "BlackWidow": "disabled",
+        "SpiderMan": "enabled",
+        "greenLantern":"REenabled",
+        "naming":"0-9A-Za-z_-.whitespace |:[]()%$#",
+"0-9A-Za-z_-.whitespace":"allowed chars"
+    }
+}
