@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serviceId>pay55555</serviceId>
+<catalogue>
 <featureToggles>
 	<paymentRefund>enabled</paymentRefund>
 	<myPreferredPaymentMethods>enabled</myPreferredPaymentMethods>
@@ -96,6 +96,5 @@
 	<keyInt>12</keyInt>
 	<keyDouble>89.78</keyDouble>
 	<keyNullVal>null</keyNullVal>
-	<keyEcapeChars>value/
- this is newline, backspace &#x8;, tab &#x9;</keyEcapeChars>
 </dataTypes>
+</catalogue>
